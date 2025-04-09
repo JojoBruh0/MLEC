@@ -1,0 +1,414 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1C1C1C; /* Dark background to create contrast */
+    color: white;
+}
+
+/* Header Styles */
+header {
+    background-color: #D50000; /* Bold red for the header */
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+header .logo h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+header .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header .menu a:hover {
+    color: #FFD54F; /* Highlight color */
+}
+
+/* Category Section */
+.category-section {
+    text-align: center;
+    margin: 20px 0;
+    background-color: #333; /* Dark background to match the theme */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.category-btn {
+    background-color: #D50000; /* Red buttons */
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #FF1744; /* Slightly darker red for hover effect */
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: black;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: #D50000; /* Red for the search button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #FF1744; /* Darker red on hover */
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 75%;
+}
+
+.product-item {
+    background-color: #333; /* Dark background for product items */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 14px;
+    color: #bbb; /* Lighter text for product description */
+}
+
+.product-item button {
+    padding: 10px 20px;
+    background-color: #D50000; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #FF1744; /* Darker red on hover */
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Ads Section */
+.ads {
+    width: 25%;
+    padding: 10px;
+}
+
+.ad-item {
+    background-color: #333; /* Dark background for ads */
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: blink 1.5s infinite; /* Blink animation for ads */
+}
+
+.ad-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ad-item a {
+    color: #D50000; /* Red links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.ad-item a:hover {
+    color: #FF1744; /* Darker red on hover */
+}
+
+.ad-item p {
+    font-size: 14px;
+    color: #bbb; /* Lighter text for ad description */
+}
+
+/* Shopping Cart */
+.shopping-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    background-color: #333; /* Dark background for the cart */
+    padding: 20px;
+    border-left: 2px solid #ddd;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.shopping-cart h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.shopping-cart ul li {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Added style for images in the cart */
+.shopping-cart img {
+    width: 80px; /* Adjust the width of images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.shopping-cart p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #D50000; /* Red for checkout button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #FF1744; /* Darker red on hover */
+}
+
+/* Blinking Ads Animation */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Best Deals Section */
+.best-deals {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #333; /* Dark background to match the overall theme */
+    color: white;
+    border-radius: 10px;
+}
+
+.best-deals h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #FF1744; /* Bold red color for emphasis */
+}
+
+.best-deals-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.best-deal-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    transition: transform 0.3s ease;
+}
+
+.best-deal-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.best-deal-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.deal-price {
+    font-size: 20px;
+    color: #FFD54F; /* Highlighted price in golden yellow */
+}
+
+.original-price {
+    font-size: 16px;
+    color: #888; /* Lighter gray for original price */
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.deal-description {
+    font-size: 14px;
+    color: #bbb; /* Light description color */
+    margin-bottom: 15px;
+}
+
+.deal-btn {
+    padding: 10px 20px;
+    background-color: #D50000; /* Bold red button for action */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.deal-btn:hover {
+    background-color: #FF1744; /* Darker red on hover */
+}
+
+/* Hover Effect for Best Deal Items */
+.best-deal-item:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+}
+
+/* Showcase Image Section */
+.showcase-image {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    display: none;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.showcase-caption {
+    font-size: 24px;
+    color: #FFD54F; /* Golden color to highlight the caption */
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Hover effect for buttons */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

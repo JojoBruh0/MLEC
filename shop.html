@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Oh My Car!</h1>
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#" class="cart" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category Filter Section -->
+    <section class="category-section">
+        <div class="category-container">
+            <button class="category-btn" onclick="filterCategory('Ferrari')">Ferrari</button>
+            <button class="category-btn" onclick="filterCategory('Lamborghini')">Lamborghini</button>
+            <button class="category-btn" onclick="filterCategory('Koenigsegg')">Koenigsegg</button>
+            <button class="category-btn" onclick="filterCategory('Porsche')">Porche</button>
+            <button class="category-btn" onclick="filterCategory('All')">All Units</button>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search what u looking for..." oninput="searchCars()">
+            <button class="search-btn" onclick="searchCars()">Search</button>
+        </div>
+    </section>
+
+    <!-- Showcase Image Section (Best Cars of Every Brand) -->
+    <section class="showcase-image">
+        <div class="carousel-container">
+            <!-- Carousel Images -->
+            <div class="carousel-images">
+                <img src="https://cdn-7.motorsport.com/images/amp/YMd9mGm2/s1000/red-bull-racing-rb21-japanese-.jpg" alt="Best Cars from McLaren" class="carousel-img">
+                <img src="http://www.hdcarwallpapers.com/walls/pagani_zonda_r-wide.jpg" alt="Best Cars from Ferrari" class="carousel-img">
+                <img src="https://www.topgear.com/sites/default/files/images/news-article/carousel/2020/03/c5c446149de4fda3f0faf5a0be014d26/_dsc5038.jpg" alt="Best Cars from Tesla" class="carousel-img">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/04-bugatti-chiron-profilee-1671631535.jpg" alt="Best Cars from BMW" class="carousel-img">
+            </div>
+    
+            <!-- Carousel Navigation Buttons -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <p class="showcase-caption">Discover the Best Cars from Leading Brands! Find Your Perfect Ride.</p>
+    </section>
+    
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="product-list" id="product-list">
+            <!-- Car items will go here dynamically -->
+        </div>
+
+        <!-- Ads Section (Moved to the Right) -->
+        <div class="ads">
+            <div class="ad-item">
+                <img src="downloadsdsds.jpg" alt="Ad 1">
+                <a href="https://www.roblox.com/">Download Now!</a>
+                <p>Get 10% off your next car purchase! Limited time offer!</p>
+            </div>
+            <div class="ad-item">
+                <img src="EGS_VALORANT_RiotGames_S2_1200x1600-7bf61b8b77e394c4bc709f6b02c0db24.jpg" alt="Ad 2">
+                <a href="https://playvalorant.com/en-us/download/">Download Now!</a>
+                <p>Explore the latest vehicles. Check out our deals!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Deals Section -->
+    <section class="best-deals">
+        <h2>Best Deals on Cars</h2>
+        <div class="best-deals-container">
+            <div class="best-deal-item">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.tDTAFDIY6AuvgQtJoT3CBQHaEc&pid=Api&P=0&h=220" alt="Deal 1">
+                <h3>2024 Porche 911</h3>
+                <p class="deal-price">₱690,999 <span class="original-price">₱800,000</span></p>
+                <p class="deal-description">Get the electric ride of your dreams. Limited-time offer!</p>
+                <button class="deal-btn">Grab the Deal</button>
+            </div>
+            <div class="best-deal-item">
+                <img src="https://www.buildpriceoption.com/wp-content/uploads/2022/10/2024-Dark-horse-mustang.jpg" alt="Deal 2">
+                <h3>2024 Ford Mustang</h3>
+                <p class="deal-price">₱350,999 <span class="original-price">₱420,000</span></p>
+                <p class="deal-description">Drive with power and style. Available now with a huge discount!</p>
+                <button class="deal-btn">Grab the Deal</button>
+            </div>
+            <div class="best-deal-item">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.wRr8l9fHtKTWV2XHiWAP8gHaE8&pid=Api&P=0&h=220" alt="Deal 3">
+                <h3>2025 BMW 3 Series</h3>
+                <p class="deal-price">₱390,499 <span class="original-price">₱500,000</span></p>
+                <p class="deal-description">Luxury and performance combined. Don't miss out on this offer!</p>
+                <button class="deal-btn">Grab the Deal</button>
+            </div>
+        </div>
+    </section>
+
+   <!-- Shopping Cart -->
+    <div class="shopping-cart" id="cart-container" style="display:none;">
+     <h1>Your Cart</h1>
+     <ul id="cart-list"></ul>
+     <p id="total-price">Total: ₱0.00</p>
+     <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+     <button class="close-cart" onclick="toggleCart()">Close</button>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
+
