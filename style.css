@@ -412,3 +412,79 @@ header .menu a:hover {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    header .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .category-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .category-btn {
+        padding: 10px;
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .search-section {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .search-container input {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .product-list {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr); /* One column for mobile */
+        padding: 10px;
+    }
+
+    .ads {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .best-deals-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .best-deal-item {
+        width: 90%;
+    }
+
+    .shopping-cart {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        top: 0;
+        right: 0;
+        border-left: none;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .carousel-img {
+        height: auto;
+    }
+
+    .prev, .next {
+        font-size: 24px;
+        padding: 8px;
+    }
+}
